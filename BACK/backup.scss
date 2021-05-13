@@ -1,3 +1,5 @@
+//Abstracts/variables
+
 $color-primary:#7ed56f;
 $color-primary-light:#55c57a;
 $color-primary-dark:#28b485;
@@ -14,6 +16,8 @@ $gutter-vertical: 8rem;
 $gutter-vertical-small: 6rem;
 $gutter-horizontal: 6rem;
 
+//Abstracts/mixins
+
 @mixin clearfix {
     &::after {
         content: "";
@@ -21,6 +25,8 @@ $gutter-horizontal: 6rem;
         clear: both;
     }
 }
+
+//Base/base
 
 *,
 *::after,
@@ -40,6 +46,8 @@ html{
   margin-top:-20vh;
 }
 
+//Base/typography
+
 body{
   box-sizing:border-box;
   font-family:lato, sans-serif;
@@ -48,37 +56,6 @@ body{
   line-height:1.7;
   color:$color-grey-dark;
   padding:3rem;
-}
-
-.header{
-  height:95vh;
-  background-image:linear-gradient(
-    to right bottom, 
-    rgba($color-primary-light, 0.8), 
-    rgba($color-primary-dark, 08)),
-    url("https://tinyurl.com/58scrsb9");
-  background-size:cover;
-  background-position:top;
-  position:relative;
-  clip-path:polygon(0 0,100% 0,100% 80%,0% 100%);
-  
-  &__logo-box{
-    position:absolute;
-    top:4rem;
-    left:4rem;
-  }
-  
-  &__logo{
-    height:3.5rem;
-  }
-  
-  &__text-box{
-    position:absolute;
-    top:40%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
-  }
 }
 
 .heading-primary{
@@ -135,6 +112,41 @@ body{
     }
 }
 
+//Layout/header
+
+.header{
+  height:95vh;
+  background-image:linear-gradient(
+    to right bottom, 
+    rgba($color-primary-light, 0.8), 
+    rgba($color-primary-dark, 08)),
+    url("https://tinyurl.com/58scrsb9");
+  background-size:cover;
+  background-position:top;
+  position:relative;
+  clip-path:polygon(0 0,100% 0,100% 80%,0% 100%);
+  
+  &__logo-box{
+    position:absolute;
+    top:4rem;
+    left:4rem;
+  }
+  
+  &__logo{
+    height:3.5rem;
+  }
+  
+  &__text-box{
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+  }
+}
+
+//Base/utilities
+
 .u-center-text{
   text-align:center;
 }
@@ -150,6 +162,8 @@ body{
 .u-margin-bottom-small{
   margin-bottom:1.5rem;
 }
+
+//Base/animations
 
 @keyframes moveInRight{
   0%{
@@ -193,6 +207,8 @@ body{
   }
 }
 
+//Layout/grid
+
 .row{
   max-width:$grid-width;
   margin:0 auto;
@@ -234,6 +250,8 @@ body{
    width:calc(3 * ((100% - 3 * #{$gutter-horizontal})/4) + 2 * #{$gutter-horizontal});
   }
 }
+
+//Components/button
 
 .btn{
   &:link,
