@@ -113,19 +113,16 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .section-about {
-  background-color: #f7f7f7;
+  background: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh;
 }
 
 body {
-  font-family: lato, sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: lato,sans-serif;
   font-weight: 400;
   /*font-size:16px;*/
   line-height: 1.7;
@@ -167,7 +164,17 @@ body {
   background-image: -webkit-gradient(linear, left top, right top, from(#55c57a), to(#28b485));
   background-image: linear-gradient(to right, #55c57a, #28b485);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
+  letter-spacing: .2rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.heading-secondary:hover {
+  -webkit-transform: skewY(2deg) skewX(15deg) scale(1.1);
+          transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .heading-tertiary {
@@ -233,7 +240,7 @@ body {
 }
 
 .btn--white {
-  background-color: #fff;
+  background: #fff;
   color: #777;
 }
 
@@ -263,23 +270,158 @@ body {
 }
 
 .btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
   color: #7ed56f;
   display: inline-block;
   text-decoration: none;
   border-bottom: 1px solid #7ed56f;
   padding: 3px;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .btn-text:hover {
-  background-color: #7ed56f;
+  background: #7ed56f;
   color: #fff;
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+.btn-text:active {
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.card {
+  -webkit-perspective: 150rem;
+          perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
+}
+
+.card__side {
+  color: white;
+  font-size: 2rem;
+  background-color: orangered;
+  height: 50rem;
+  -webkit-transition: all .8s ease;
+  transition: all .8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+
+.card__side--front {
+  background-color: #fff;
+}
+
+.card__side--back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.card__side--back-1 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ffb900), to(#ff7730));
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+
+.card:hover .card__side--front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.card:hover .card__side--back {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.composition {
+  position: relative;
+}
+
+.composition__photo {
+  width: 55%;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 10;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  outline-offset: 2rem;
+}
+
+.composition__photo--p1 {
+  left: 0;
+  top: -2rem;
+}
+
+.composition__photo--p2 {
+  right: 0;
+  top: 2rem;
+}
+
+.composition__photo--p3 {
+  left: 20%;
+  top: 10rem;
+}
+
+.composition__photo:hover {
+  outline: 1.5rem solid #7ed56f;
+  -webkit-transform: scale(1.05) translateY(-0.5rem);
+          transform: scale(1.05) translateY(-0.5rem);
+  -webkit-box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  z-index: 11;
+}
+
+.composition:hover .composition__photo:not(:hover) {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.feature-box {
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.feature-box__icon {
+  font-size: 6rem;
+  margin-bottom: .5rem;
+  display: inline-block;
+  background-image: -webkit-gradient(linear, left top, right top, from(#55c57a), to(#28b485));
+  background-image: linear-gradient(to right, #55c57a, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.feature-box:hover {
+  -webkit-transform: translateY(-1.5rem) scale(1.03);
+          transform: translateY(-1.5rem) scale(1.03);
 }
 
 .row {
   max-width: 114rem;
-  background-color: #eee;
   margin: 0 auto;
 }
 
@@ -294,7 +436,6 @@ body {
 }
 
 .row [class^="col-"] {
-  background-color: orangered;
   float: left;
 }
 
@@ -328,8 +469,8 @@ body {
 
 .header {
   height: 95vh;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.8)), to(#28b485)), url("https://tinyurl.com/58scrsb9");
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), #28b485), url("https://tinyurl.com/58scrsb9");
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.8)), to(rgba(40, 180, 133, 0.8))), url("https://tinyurl.com/58scrsb9");
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("https://tinyurl.com/58scrsb9");
   background-size: cover;
   background-position: top;
   position: relative;
@@ -354,5 +495,26 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.features {
+  margin-top: -10rem;
+  padding: 20rem 0;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.8)), to(rgba(40, 180, 133, 0.8))), url("https://tinyurl.com/ykpu4bv9");
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("https://tinyurl.com/ykpu4bv9");
+  background-size: cover;
+  -webkit-transform: skewY(-7deg);
+          transform: skewY(-7deg);
+}
+
+.features > * {
+  -webkit-transform: skewY(7deg);
+          transform: skewY(7deg);
+}
+
+.tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 50rem 0;
+  margin-top: -10rem;
 }
 /*# sourceMappingURL=main.css.map */
