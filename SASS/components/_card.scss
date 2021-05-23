@@ -1,0 +1,16 @@
+.card{
+  perespective:150rem;
+  -moz-perespective:150rem;
+  
+  &__side{  
+  color:white;
+  font-size:2rem;
+  background:orangered;
+  height:50rem;
+  transition:all .8s;
+  }  
+  
+  &:hover &__side{
+    transform:rotateY(180deg);
+  }
+}
